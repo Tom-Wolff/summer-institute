@@ -23,8 +23,8 @@ Next, you need to set up your developer account here: https://developer.spotify.
 If your application is approved, you can view your "clientID"" and "secret" credentials from the main spotify developer console. Let's create two objects that describe these credentials as follows:
 
 ```{r}
-clientID <- "YOURCLIENTIDHERE"
-secret <- "YOURSECRETHERE"
+clientID <- "ca1b84a837f74eee8b4423b514f65812"
+secret <- "dc7c2a3574e64c10977605a3bc66b9de"
 ```
 
 First, we make a call to Spotify's "request API" which tells us whether or not we have permission to use the API using the `POST` function from the httr package: 
@@ -63,7 +63,7 @@ This is where most of the music-related data is. Other parts of 'r2' have to do 
 items <- r2$items
 ```
 
-Drom exploring the lists (within lists) of data within "items" we can see there is a lot of information you might want! But you also might not want all of it, and unlisting everything can create an unweidly dataset. The loop below creates an empty dataframe of the size we want to fill. For this example, we'll just extract the title of the song (name), the credited artist (artist), the track's unique spotify id (id, which can be used for future API calls), and the åsong's overall popularity on spotify (popularity, integer 0 - 100).
+From exploring the lists (within lists) of data within "items" we can see there is a lot of information you might want! But you also might not want all of it, and unlisting everything can create an unweidly dataset. The loop below creates an empty dataframe of the size we want to fill. For this example, we'll just extract the title of the song (name), the credited artist (artist), the track's unique spotify id (id, which can be used for future API calls), and the åsong's overall popularity on spotify (popularity, integer 0 - 100).
 
 ```{r}
 global50 <- matrix(nrow= 50, ncol= 4)
