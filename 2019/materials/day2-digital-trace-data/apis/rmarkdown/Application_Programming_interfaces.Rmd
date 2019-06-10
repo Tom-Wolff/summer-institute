@@ -147,7 +147,7 @@ Note that this API call also generated a lot of other interesting variables, inc
 names(korea_tweets)
 ```
 
-As a brief aside, the `rtweet` function also interfaces nicely with ggplot and other visualization libraries to produce nice plots of the results above. For instance, let's make a plot of the frequency of tweets about Korea over the past few days:
+As a brief aside, the `rtweet` package also interfaces nicely with ggplot and other visualization libraries to produce nice plots of the results above. For instance, let's make a plot of the frequency of tweets about Korea over the past few days:
 
 ```{r}
 library(ggplot2)
