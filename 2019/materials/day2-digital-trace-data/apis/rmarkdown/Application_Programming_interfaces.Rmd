@@ -211,10 +211,6 @@ This creates a dataframe with a variety of additional variables. For example:
 sanders_twitter_profile$description
 ```
 
-```{r}
-sanders_twitter_profile$location
-```
-
 
 ```{r}
 sanders_twitter_profile$location
