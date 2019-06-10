@@ -74,6 +74,8 @@ Note that this code assumes that you have already authenticated with Twitter in 
 
 ```{r, eval=FALSE}
 
+# library(rtweet)
+
 for (i in 1:24){
   #Search for 50 recent tweets about computational social science
   css_tweets<-search_tweets("Computational Social Science", n=50, include_rts = FALSE)
