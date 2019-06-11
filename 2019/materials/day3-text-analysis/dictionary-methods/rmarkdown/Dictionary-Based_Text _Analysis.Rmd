@@ -114,7 +114,14 @@ Having created a very simple/primitive dictionary, we can now subset the parts o
 
 ```{r}
 economic_tweets<-trumptweets %>% 
-filter(text, paste0(economic_dictionary, "\\b", collapse = "|"))
+filter(text == paste0(economic_dictionary, "\\b", collapse = "|")) 
+# ^ This returns an error, likely because the `filter` function needs to have a logical evaluation in it.
+# I'm guessing that the intended output is supposed to be tweets containing the words that we've included
+# in `economic_dictionary`. The best way I know of creating this output is to use `stringr::str_detect`
+# to identify instances in `trumptweets$text` where words from `economic_dictionary` appear:
+
+economic_tweets <- trumptweets %>%
+  filter(stringr::str_detect(text, economic_dictionary))
 ```
 
 # Sentiment Analysis
