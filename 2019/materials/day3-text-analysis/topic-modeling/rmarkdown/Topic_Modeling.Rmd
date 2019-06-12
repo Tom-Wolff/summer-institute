@@ -40,7 +40,7 @@ It is important to note that topic models are no substitute for human interpreta
 
 The most common form of topic modeling is Latent Dirichlet Allocation or LDA. LDA works as follows:
 
-1) First, LDA requires the research to specify a value of *k* or the number of topics in the corpus. In practice, this is a very difficult---and consequential---decision. We will discuss procedures that can be used to identify the appropriate value of *k* in the common scenario where one does not have strong theoretical a priori about the number of latent themes that might exist in a corpus;
+1) First, LDA requires the researcher to specify a value of *k* or the number of topics in the corpus. In practice, this is a very difficult---and consequential---decision. We will discuss procedures that can be used to identify the appropriate value of *k* in the common scenario where one does not have strong theoretical a priori about the number of latent themes that might exist in a corpus;
 
 2) Each word that appears in the corpus is randomly assigned to one of the *k* topics. If you are a stickler for the details, this assignment is technically not random, since it involves a Dirichlet distribution that employs a probability simplex instead of real numbers (this simply means that the numbers assigned across the *k* topics add up to 1)
 
@@ -172,7 +172,7 @@ The `stm` package has a useful function called `searchK` which allows the user t
 
 ```{r, message=FALSE, warning=FALSE, echo=TRUE, results='hide'}
 findingk <- searchK(out$documents, out$vocab, K = c(10:30),
- prevalence =~ rating + s(day), data = meta, verbose=FALSE)
+ prevalence =~ rating + s(day), data = meta, verbose=T)
 
 plot(findingk)
 ```
